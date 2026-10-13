@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pharmatech - Farmacia y parafarmacia. Catálogo, ofertas, contacto y ubicación.">
+  <title>Pharmatech | Farmacia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span data-i18n="topMessage">Tu farmacia de confianza</span>
+      <div class="language-mini">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="ca">CA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" aria-label="Pharmatech">
+        <img src="img/logo.png" alt="Pharmatech logo">
+        <div><strong>Pharmatech</strong><span data-i18n="brandSubtitle">Farmacia & Parafarmacia</span></div>
+      </a>
+      <nav class="nav" id="mainNav">
+        <a href="#inicio" data-i18n="navHome">Inicio</a>
+        <a href="#articulos" data-i18n="navProducts">Artículos</a>
+        <a href="#ofertas" data-i18n="navOffers">Ofertas</a>
+        <a href="#nosotros" data-i18n="navAbout">Quiénes somos</a>
+        <a href="#contacto" data-i18n="navContact">Contacto</a>
+        <a href="#ubicacion" data-i18n="navLocation">Ubicación</a>
+      </nav>
+      <div class="header-actions">
+        <select id="languageSelect" aria-label="Language selector">
+          <option value="es">🇪🇸 Español</option>
+          <option value="ca">🏴 Català</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+        <button class="cart-button" id="openCart" aria-label="Abrir carrito">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label" data-i18n="cart">Carrito</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-button" id="menuButton" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="heroEyebrow">Cuidamos de ti</span>
+          <h1 data-i18n="heroTitle">Tu salud, nuestra prioridad.</h1>
+          <p data-i18n="heroText">Encuentra productos de farmacia y parafarmacia, descubre nuestras ofertas y conoce al equipo Pharmatech.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#articulos" data-i18n="seeProducts">Ver artículos</a>
+            <a class="btn btn-light" href="#ofertas" data-i18n="seeOffers">Ver ofertas</a>
+          </div>
+          <div class="hero-features">
+            <div><span>✓</span><b data-i18n="feature1">Atención cercana</b></div>
+            <div><span>✓</span><b data-i18n="feature2">Productos seleccionados</b></div>
+            <div><span>✓</span><b data-i18n="feature3">Compra sencilla</b></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-cross">+</div>
+          <img src="img/logo.png" alt="Pharmatech" class="hero-logo">
+          <span data-i18n="heroCard">Farmacia & Parafarmacia</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="articulos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow" data-i18n="catalogEyebrow">Catálogo</span>
+            <h2 data-i18n="productsTitle">Artículos</h2>
+            <p data-i18n="productsText">Productos habituales de farmacia y parafarmacia.</p>
+          </div>
+          <div class="filter-wrap">
+            <label for="categoryFilter" data-i18n="filterLabel">Categoría</label>
+            <select id="categoryFilter">
+              <option value="all" data-i18n="allCategories">Todas</option>
+              <option value="higiene" data-i18n="catHygiene">Higiene</option>
+              <option value="cuidado" data-i18n="catCare">Cuidado personal</option>
+              <option value="bienestar" data-i18n="catWellness">Bienestar</option>
+              <option value="medicamentos" data-i18n="catMedicines">Medicamentos</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section offers-section" id="ofertas">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow" data-i18n="offersEyebrow">Promociones</span>
+            <h2 data-i18n="offersTitle">Ofertas</h2>
+            <p data-i18n="offersText">Aprovecha nuestras promociones destacadas.</p>
+          </div>
+        </div>
+        <div class="product-grid" id="offersGrid"></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="nosotros">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <img src="img/logo.png" alt="Logo Pharmatech">
+          <div class="about-badge">+ <span data-i18n="careBadge">cuidado</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow" data-i18n="aboutEyebrow">Conócenos</span>
+          <h2 data-i18n="aboutTitle">Quiénes somos</h2>
+          <p data-i18n="aboutText1">En Pharmatech queremos ofrecer una experiencia cercana, clara y moderna para ayudarte a encontrar lo que necesitas.</p>
+          <p data-i18n="aboutText2">Nuestro catálogo combina productos de cuidado personal, higiene y bienestar. Para este proyecto, el catálogo es demostrativo y los datos pueden sustituirse por los productos reales de la farmacia.</p>
+          <div class="about-points">
+            <div><strong>01</strong><span data-i18n="aboutPoint1">Atención personalizada</span></div>
+            <div><strong>02</strong><span data-i18n="aboutPoint2">Información clara de productos</span></div>
+            <div><strong>03</strong><span data-i18n="aboutPoint3">Una web fácil de usar</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow" data-i18n="contactEyebrow">Estamos aquí para ayudarte</span>
+          <h2 data-i18n="contactTitle">Contacto</h2>
+          <p data-i18n="contactText">¿Tienes alguna pregunta? Escríbenos o llámanos. Sustituye estos datos de ejemplo por los de tu farmacia.</p>
+          <div class="contact-cards">
+            <a href="tel:+34943338765" class="contact-card"><span>☎</span><div><b data-i18n="phone">Teléfono</b><small>943 338 765</small></div></a>
+            <a href="mailto:info@pharmatech.es" class="contact-card"><span>✉</span><div><b>Email</b><small>info@pharmatech.es</small></div></a>
+            <div class="contact-card"><span>⏰</span><div><b data-i18n="hours">Horario</b><small data-i18n="hoursValue">Lun–Vie · 09:00–20:00</small></div></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <h3 data-i18n="formTitle">Envíanos un mensaje</h3>
+          <label><span data-i18n="formName">Nombre</span><input type="text" required placeholder="Tu nombre" data-i18n-placeholder="namePlaceholder"></label>
+          <label><span data-i18n="formEmail">Email</span><input type="email" required placeholder="tu@email.com"></label>
+          <label><span data-i18n="formMessage">Mensaje</span><textarea rows="5" required placeholder="Escribe tu mensaje..." data-i18n-placeholder="messagePlaceholder"></textarea></label>
+          <button class="btn btn-primary" type="submit" data-i18n="sendMessage">Enviar mensaje</button>
+          <p class="form-note" id="formMessageStatus"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section location-section" id="ubicacion">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow" data-i18n="locationEyebrow">Visítanos</span>
+            <h2 data-i18n="locationTitle">Dónde estamos</h2>
+            <p data-i18n="locationText">Dirección de ejemplo: reemplázala por la dirección real de Pharmatech.</p>
+          </div>
+        </div>
+        <div class="location-grid">
+          <div class="address-card">
+            <div class="location-icon">📍</div>
+            <h3>Pharmatech</h3>
+            <p>Carrer Exemple, 25<br>08001 Barcelona<br>España</p>
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Carrer+Exemple+25+Barcelona" target="_blank" rel="noopener" data-i18n="openMaps">Abrir en Google Maps</a>
+          </div>
+          <div class="map-placeholder">
+            <div class="map-grid"></div>
+            <div class="map-pin">📍</div>
+            <span data-i18n="mapDemo">Mapa de ubicación — sustituye la dirección por la real</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="img/logo.png" alt="Pharmatech"><div><strong>Pharmatech</strong><span data-i18n="brandSubtitle">Farmacia & Parafarmacia</span></div></div>
+      <div><h4 data-i18n="footerLinks">Enlaces</h4><a href="#articulos" data-i18n="navProducts">Artículos</a><a href="#ofertas" data-i18n="navOffers">Ofertas</a><a href="#nosotros" data-i18n="navAbout">Quiénes somos</a></div>
+      <div><h4 data-i18n="footerHelp">Ayuda</h4><a href="#contacto" data-i18n="navContact">Contacto</a><a href="#ubicacion" data-i18n="navLocation">Ubicación</a><button class="footer-cart" id="openCartFooter" data-i18n="cart">Carrito</button></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><span>© <span id="year"></span> Pharmatech</span><span data-i18n="demoNotice">Web demostrativa — sustituye los datos antes de publicarla.</span></div></div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compra">
+    <div class="cart-header"><div><span class="eyebrow" data-i18n="cartEyebrow">Tu selección</span><h2 data-i18n="cartTitle">Carrito</h2></div><button id="closeCart" class="close-cart" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="empty-cart" id="emptyCart"><div>🛒</div><h3 data-i18n="emptyCartTitle">Tu carrito está vacío</h3><p data-i18n="emptyCartText">Añade algún artículo para verlo aquí.</p><button class="btn btn-primary" id="goShopping" data-i18n="startShopping">Empezar a comprar</button></div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total"><span data-i18n="total">Total</span><strong id="cartTotal">0,00 €</strong></div>
+      <button class="btn btn-primary checkout-btn" id="checkoutButton" data-i18n="checkout">Continuar</button>
+      <button class="clear-cart" id="clearCart" data-i18n="clearCart">Vaciar carrito</button>
+      <p class="cart-disclaimer" data-i18n="cartDisclaimer">Demo: el botón de compra no procesa pagos reales.</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
